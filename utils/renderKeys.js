@@ -2,7 +2,6 @@ import { getContainer } from "./domElements.js";
 import { handleButtonClick } from "./handlers.js";
 
 export default function renderKeys(keys, languageEN) {
-    console.log(languageEN);
     let container = getContainer();
     container.innerHTML = "";
     keys.forEach((key) => {

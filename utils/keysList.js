@@ -1,5 +1,75 @@
 const keys = [
     {
+        display: { ru: "Ё", en: "`", additional: { ru: "`", en: "" } },
+        code: "Backquote",
+        util: false,
+    },
+    {
+        display: { ru: "2", en: "2", additional: { ru: ")", en: ")" } },
+        code: "Digi1",
+        util: false,
+    },
+    {
+        display: { ru: "3", en: "3", additional: { ru: ")", en: ")" } },
+        code: "Digit3",
+        util: false,
+    },
+    {
+        display: { ru: "4", en: "4", additional: { ru: "$", en: "$" } },
+        code: "Digit4",
+        util: false,
+    },
+    {
+        display: { ru: "5", en: "5", additional: { ru: "%", en: "%" } },
+        code: "Digit5",
+        util: false,
+    },
+    {
+        display: { ru: "6", en: "6", additional: { ru: ":", en: ":" } },
+        code: "Digit6",
+        util: false,
+    },
+    {
+        display: { ru: "7", en: "7", additional: { ru: "?", en: "?" } },
+        code: "Digit7",
+        util: false,
+    },
+    {
+        display: { ru: "8", en: "8", additional: { ru: "*", en: "*" } },
+        code: "Digit8",
+        util: false,
+    },
+    {
+        display: { ru: "9", en: "9", additional: { ru: "(", en: "(" } },
+        code: "Digit9",
+        util: false,
+    },
+    {
+        display: { ru: "0", en: "0", additional: { ru: ")", en: ")" } },
+        code: "Digit0",
+        util: false,
+    },
+    {
+        display: { ru: "_", en: "_", additional: { ru: "-", en: "-" } },
+        code: "numpadSubtract",
+        util: false,
+    },
+    {
+        display: { ru: "=", en: "=", additional: { ru: "+", en: "+" } },
+        code: "Equal",
+        util: false,
+    },
+    {
+        display: { ru: "Backspace", en: "Backspace", additional: { ru: "", en: "" } },
+        code: "Backspace",
+        util: true,
+    },
+    {
+        display: { ru: "Tab", en: "Tab", additional: { ru: "", en: "" } },
+        code: "Tab",
+        util: true,
+    },
+    {
         display: { ru: "Й", en: "Q", additional: { ru: "", en: "" } },
         code: "KeyQ",
         util: false,
@@ -65,6 +135,16 @@ const keys = [
         util: false,
     },
     {
+        display: { ru: "DEL", en: "DEL", additional: { ru: "", en: "" } },
+        code: "Delete",
+        util: true,
+    },
+    {
+        display: { ru: "Caps Lock", en: "Caps Lock", additional: { ru: "", en: "" } },
+        code: "CapsLock",
+        util: true,
+    },
+    {
         display: { ru: "Ф", en: "A", additional: { ru: "", en: "" } },
         code: "KeyA",
         util: false,
@@ -110,14 +190,24 @@ const keys = [
         util: false,
     },
     {
-        display: { ru: "Ж", en: ":", additional: { ru: "", en: "" } },
+        display: { ru: "Ж", en: ";", additional: { ru: ";", en: "" } },
         code: "Semicolon",
         util: false,
     },
     {
-        display: { ru: "Э", en: "'", additional: { ru: "", en: "" } },
+        display: { ru: "Э", en: "'", additional: { ru: "'", en: "" } },
         code: "Quote",
         util: false,
+    },
+    {
+        display: { ru: "ENTER", en: "ENTER", additional: { ru: "'", en: "" } },
+        code: "Enter",
+        util: true,
+    },
+    {
+        display: { ru: "Shift", en: "Shift", additional: { ru: "'", en: "" } },
+        code: "ShiftLeft",
+        util: true,
     },
     {
         display: { ru: "Я", en: "Z", additional: { ru: "", en: "" } },
@@ -155,12 +245,12 @@ const keys = [
         util: false,
     },
     {
-        display: { ru: "Б", en: ",", additional: { ru: "", en: "" } },
+        display: { ru: "Б", en: ",", additional: { ru: ",", en: "" } },
         code: "NumpadDecimal",
         util: false,
     },
     {
-        display: { ru: "Ю", en: ".", additional: { ru: "", en: "" } },
+        display: { ru: "Ю", en: ".", additional: { ru: ".", en: "" } },
         code: "Period",
         util: false,
     },
@@ -168,6 +258,61 @@ const keys = [
         display: { ru: "/", en: "/", additional: { ru: "", en: "" } },
         code: "Slash",
         util: false,
+    },
+    {
+        display: { ru: "up", en: "up", additional: { ru: "", en: "" } },
+        code: "ArrowUp",
+        util: true,
+    },
+    {
+        display: { ru: "Shift", en: "Shift", additional: { ru: "", en: "" } },
+        code: "ShiftRight",
+        util: true,
+    },
+    {
+        display: { ru: "Ctrl", en: "Ctrl", additional: { ru: "", en: "" } },
+        code: "ControlLeft",
+        util: true,
+    },
+    {
+        display: { ru: "Win", en: "Win", additional: { ru: "", en: "" } },
+        code: "MetaLeft",
+        util: true,
+    },
+    {
+        display: { ru: "Alt", en: "Alt", additional: { ru: "", en: "" } },
+        code: "AltLeft",
+        util: true,
+    },
+    {
+        display: { ru: "---------------------------------", en: "---------------------------------", additional: { ru: "", en: "" } },
+        code: "Space",
+        util: true,
+    },
+    {
+        display: { ru: "Alt", en: "Alt", additional: { ru: "", en: "" } },
+        code: "AltRight",
+        util: true,
+    },
+    {
+        display: { ru: "Ctrl", en: "Ctrl", additional: { ru: "", en: "" } },
+        code: "ControlRight",
+        util: true,
+    },
+    {
+        display: { ru: "left", en: "left", additional: { ru: "", en: "" } },
+        code: "ArrowLeft",
+        util: true,
+    },
+    {
+        display: { ru: "down", en: "down", additional: { ru: "", en: "" } },
+        code: "ArrowDown",
+        util: true,
+    },
+    {
+        display: { ru: "right", en: "right", additional: { ru: "", en: "" } },
+        code: "ArrowRight",
+        util: true,
     },
 ];
 
