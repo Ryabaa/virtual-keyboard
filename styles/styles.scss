@@ -22,7 +22,6 @@ button {
 
 body {
     height: 100%;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,44 +30,75 @@ body {
 }
 
 .textarea {
-    width: 765px;
+    width: 785px;
     color: #fafafa;
-    background-color: #a6a6b43a;
+    background-color: #1f1f2b52;
     border: none;
     outline: none;
     resize: none;
     padding: 10px 20px;
+    height: 100px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #fafafa11;
 }
 
 .container {
     background-color: #1f1f2b52;
-    max-width: 765px;
+    max-width: 785px;
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
+    position: relative;
 }
 
 .button {
-    background-color: #2a2a33;
+    background-color: #2a2a3391;
     min-width: 45px;
     min-height: 45px;
     max-width: max-content;
     padding: 0 10px;
     border-radius: 5px;
     color: #fafafa;
+    position: relative;
+    & img {
+        width: 15px;
+    }
+    &--active,
+    &:active {
+        background-color: #314499;
+        color: #fafafa;
+    }
+    &-util {
+        background-color: #2a2a33;
+        color: #868686;
+        font-style: italic;
+    }
+    &-backspace,
+    &-enter,
+    &-capslock,
+    &-controlleft {
+        min-width: 95px;
+    }
+    &-shiftleft {
+        min-width: 145px;
+    }
+    &-space {
+        min-width: 295px;
+    }
 }
 
-.button--active,
-.button:active {
-    background-color: #5a6f83;
+.additional {
+    position: absolute;
+    top: 5px;
+    left: 5px;
 }
 
 .languageIcon {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 20px;
+    right: 40px;
     background-color: #2a2a33;
     color: #fafafa;
     padding: 10px;

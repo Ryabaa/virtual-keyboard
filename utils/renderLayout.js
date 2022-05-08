@@ -6,10 +6,11 @@ export default function renderLayout() {
     let languageIcon = document.createElement("p");
 
     textarea.className = "textarea";
+    textarea.readOnly = "readonly";
     container.className = "container";
     languageIcon.className = "languageIcon";
 
-    body.appendChild(languageIcon);
     body.appendChild(textarea);
     body.appendChild(container);
+    body.appendChild(languageIcon);
 }

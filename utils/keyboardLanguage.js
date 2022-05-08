@@ -1,7 +1,7 @@
 import keys from "./keysList.js";
 import renderKeys from "./renderKeys.js";
 
-let languageEN = true;
+export let languageEN = true;
 
 const updateLanguageIcon = (languageEN) => {
     let languageIcon = document.querySelector(".languageIcon");

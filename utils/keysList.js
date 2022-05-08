@@ -1,16 +1,23 @@
+import { delFunction } from "./utilKeysFunctions.js";
+
 const keys = [
     {
-        display: { ru: "Ё", en: "`", additional: { ru: "`", en: "" } },
+        display: { ru: "Ё", en: "`", additional: { ru: "`", en: "~" } },
         code: "Backquote",
         util: false,
     },
     {
-        display: { ru: "2", en: "2", additional: { ru: ")", en: ")" } },
-        code: "Digi1",
+        display: { ru: "1", en: "1", additional: { ru: "!", en: "!" } },
+        code: "Digit1",
         util: false,
     },
     {
-        display: { ru: "3", en: "3", additional: { ru: ")", en: ")" } },
+        display: { ru: "2", en: "2", additional: { ru: "@", en: "@" } },
+        code: "Digit2",
+        util: false,
+    },
+    {
+        display: { ru: "3", en: "3", additional: { ru: "#", en: "#" } },
         code: "Digit3",
         util: false,
     },
@@ -62,6 +69,7 @@ const keys = [
     {
         display: { ru: "Backspace", en: "Backspace", additional: { ru: "", en: "" } },
         code: "Backspace",
+        function: delFunction,
         util: true,
     },
     {
@@ -200,12 +208,12 @@ const keys = [
         util: false,
     },
     {
-        display: { ru: "ENTER", en: "ENTER", additional: { ru: "'", en: "" } },
+        display: { ru: "ENTER", en: "ENTER", additional: { ru: "", en: "" } },
         code: "Enter",
         util: true,
     },
     {
-        display: { ru: "Shift", en: "Shift", additional: { ru: "'", en: "" } },
+        display: { ru: "Shift", en: "Shift", additional: { ru: "", en: "" } },
         code: "ShiftLeft",
         util: true,
     },
@@ -260,8 +268,9 @@ const keys = [
         util: false,
     },
     {
-        display: { ru: "up", en: "up", additional: { ru: "", en: "" } },
+        display: { ru: "U", en: "U", additional: { ru: "", en: "" } },
         code: "ArrowUp",
+        icon: true,
         util: true,
     },
     {
@@ -285,7 +294,7 @@ const keys = [
         util: true,
     },
     {
-        display: { ru: "---------------------------------", en: "---------------------------------", additional: { ru: "", en: "" } },
+        display: { ru: "", en: "", additional: { ru: "", en: "" } },
         code: "Space",
         util: true,
     },
@@ -300,18 +309,21 @@ const keys = [
         util: true,
     },
     {
-        display: { ru: "left", en: "left", additional: { ru: "", en: "" } },
+        display: { ru: "L", en: "L", additional: { ru: "", en: "" } },
         code: "ArrowLeft",
+        icon: true,
         util: true,
     },
     {
-        display: { ru: "down", en: "down", additional: { ru: "", en: "" } },
+        display: { ru: "D", en: "D", additional: { ru: "", en: "" } },
         code: "ArrowDown",
+        icon: true,
         util: true,
     },
     {
-        display: { ru: "right", en: "right", additional: { ru: "", en: "" } },
+        display: { ru: "R", en: "R", additional: { ru: "", en: "" } },
         code: "ArrowRight",
+        icon: true,
         util: true,
     },
 ];
