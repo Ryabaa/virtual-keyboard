@@ -2,14 +2,15 @@ import { getContainer } from "./domElements.js";
 import { handleButtonClick } from "./handlers.js";
 
 export default function renderKeys(keys, languageEN) {
+    console.log(languageEN);
     let container = getContainer();
     container.innerHTML = "";
     keys.forEach((key) => {
-        let element = document.createElement("button");
-        element.addEventListener("click", (event) => handleButtonClick(event, key));
-        element.innerText = languageEN ? key.display.en : key.display.ru;
-        element.dataset.code = key.code;
-        element.classList.add("button");
-        container.appendChild(element);
+        let button = document.createElement("button");
+        button.addEventListener("click", (event) => handleButtonClick(event, key, languageEN));
+        button.innerText = languageEN ? key.display.en : key.display.ru;
+        button.dataset.code = key.code;
+        button.classList.add("button");
+        container.appendChild(button);
     });
 }
