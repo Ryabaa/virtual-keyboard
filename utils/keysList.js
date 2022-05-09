@@ -1,4 +1,4 @@
-import { delFunction } from "./utilKeysFunctions.js";
+import { cursorDown, cursorFunction, cursorLeft, cursorRight, cursorUp, delFunction } from "./utilKeysFunctions.js";
 
 const keys = [
     {
@@ -270,6 +270,7 @@ const keys = [
     {
         display: { ru: "U", en: "U", additional: { ru: "", en: "" } },
         code: "ArrowUp",
+        function: cursorUp,
         icon: true,
         util: true,
     },
@@ -311,18 +312,21 @@ const keys = [
     {
         display: { ru: "L", en: "L", additional: { ru: "", en: "" } },
         code: "ArrowLeft",
+        function: cursorLeft,
         icon: true,
         util: true,
     },
     {
         display: { ru: "D", en: "D", additional: { ru: "", en: "" } },
         code: "ArrowDown",
+        function: cursorDown,
         icon: true,
         util: true,
     },
     {
         display: { ru: "R", en: "R", additional: { ru: "", en: "" } },
         code: "ArrowRight",
+        function: cursorRight,
         icon: true,
         util: true,
     },

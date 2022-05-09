@@ -1,6 +1,7 @@
 import { getButton, getTextarea } from "./domElements.js";
 import { languageEN, switchLanguage } from "./keyboardLanguage.js";
 import keys from "./keysList.js";
+import { cursorFunction } from "./utilKeysFunctions.js";
 
 let shift = false;
 let alt = false;
@@ -9,8 +10,36 @@ export const handleButtonClick = (event, key, languageEN) => {
     let textarea = getTextarea();
     if (!key.util) {
         textarea.textContent += languageEN ? key.display.en : key.display.ru;
+        cursorFunction(false);
     } else {
         key.function();
+    }
+};
+
+export const handleButtonPress = (event, action) => {
+    let button = getButton(event.code);
+    let textarea = getTextarea();
+    let keyIndex = keys.findIndex((element) => element.code === event.code);
+
+    switch (action) {
+        case "add":
+            button ? button.classList.add("button--active") : null;
+            if (keyIndex !== -1) {
+                let key = keys[keyIndex];
+                if (!key.util) {
+                    textarea.textContent += languageEN ? key.display.en : key.display.ru;
+                    cursorFunction(false);
+                } else {
+                    key.function();
+                }
+            }
+            break;
+        case "remove":
+            button ? button.classList.remove("button--active") : null;
+            break;
+
+        default:
+            break;
     }
 };
 
@@ -35,32 +64,6 @@ export const handleResetLanguage = (event) => {
             break;
         case "AltLeft":
             alt = false;
-            break;
-
-        default:
-            break;
-    }
-};
-
-export const handleButtonPress = (event, action) => {
-    let button = getButton(event.code);
-    let textarea = getTextarea();
-    let keyIndex = keys.findIndex((element) => element.code === event.code);
-
-    switch (action) {
-        case "add":
-            button ? button.classList.add("button--active") : null;
-            if (keyIndex !== -1) {
-                let key = keys[keyIndex];
-                if (!key.util) {
-                    textarea.textContent += languageEN ? key.display.en : key.display.ru;
-                } else {
-                    key.function();
-                }
-            }
-            break;
-        case "remove":
-            button ? button.classList.remove("button--active") : null;
             break;
 
         default:
