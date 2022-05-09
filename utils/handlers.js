@@ -1,17 +1,21 @@
+import keys from "./keysList.js";
 import { getButton, getTextarea } from "./domElements.js";
 import { languageEN, switchLanguage } from "./keyboardLanguage.js";
-import keys from "./keysList.js";
-import { cursorFunction } from "./utilKeysFunctions.js";
-
-let shift = false;
-let alt = false;
+import { cursorFunction, cursorIndex, caps, shift } from "./utilKeysFunctions.js";
 
 export const handleButtonClick = (event, key, languageEN) => {
     let textarea = getTextarea();
+    let textareaArr = textarea.textContent.split("");
     if (!key.util) {
-        textarea.textContent += languageEN ? key.display.en : key.display.ru;
         cursorFunction(false);
-    } else {
+        let display = languageEN ? key.display.en : key.display.ru;
+        if (!shift && !caps) {
+            display = display.toLowerCase();
+        }
+        textareaArr.splice(cursorIndex - 1, 0, display);
+        textarea.textContent = textareaArr.join("");
+    }
+    if (key.function) {
         key.function();
     }
 };
@@ -19,6 +23,7 @@ export const handleButtonClick = (event, key, languageEN) => {
 export const handleButtonPress = (event, action) => {
     let button = getButton(event.code);
     let textarea = getTextarea();
+    let textareaArr = textarea.textContent.split("");
     let keyIndex = keys.findIndex((element) => element.code === event.code);
 
     switch (action) {
@@ -27,9 +32,15 @@ export const handleButtonPress = (event, action) => {
             if (keyIndex !== -1) {
                 let key = keys[keyIndex];
                 if (!key.util) {
-                    textarea.textContent += languageEN ? key.display.en : key.display.ru;
                     cursorFunction(false);
-                } else {
+                    let display = languageEN ? key.display.en : key.display.ru;
+                    if (!shift && !caps) {
+                        display = display.toLowerCase();
+                    }
+                    textareaArr.splice(cursorIndex - 1, 0, display);
+                    textarea.textContent = textareaArr.join("");
+                }
+                if (key.function) {
                     key.function();
                 }
             }
@@ -44,29 +55,7 @@ export const handleButtonPress = (event, action) => {
 };
 
 export const handleChangeLanguage = (event) => {
-    switch (event.code) {
-        case "ShiftLeft":
-            alt ? switchLanguage() : (shift = true);
-            break;
-        case "AltLeft":
-            shift ? switchLanguage() : (alt = true);
-            break;
-
-        default:
-            break;
-    }
-};
-
-export const handleResetLanguage = (event) => {
-    switch (event.code) {
-        case "ShiftLeft":
-            shift = false;
-            break;
-        case "AltLeft":
-            alt = false;
-            break;
-
-        default:
-            break;
+    if (!shift) {
+        if (event.code === "AltLeft") switchLanguage();
     }
 };

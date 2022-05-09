@@ -71,6 +71,7 @@ body {
 
 .button {
   background-color: #2a2a3391;
+  color: #fafafa;
   min-width: 45px;
   min-height: 45px;
   max-width: -webkit-max-content;
@@ -78,7 +79,6 @@ body {
   max-width: max-content;
   padding: 0 10px;
   border-radius: 5px;
-  color: #fafafa;
   position: relative;
 }
 
@@ -86,15 +86,13 @@ body {
   width: 15px;
 }
 
-.button--active, .button:active {
+.button--active, .button--pressed, .button:active {
   background-color: #314499;
-  color: #fafafa;
 }
 
 .button-util {
-  background-color: #2a2a33;
-  color: #868686;
-  font-style: italic;
+  color: #6778c2;
+  border-bottom: solid 3px #314499;
 }
 
 .button-backspace, .button-enter, .button-capslock, .button-controlleft {
@@ -113,6 +111,7 @@ body {
   position: absolute;
   top: 5px;
   left: 5px;
+  opacity: 0.5;
 }
 
 .languageIcon {

@@ -1,4 +1,16 @@
-import { cursorDown, cursorFunction, cursorLeft, cursorRight, cursorUp, delFunction } from "./utilKeysFunctions.js";
+import {
+    backspaceFunction,
+    capslockFunction,
+    cursorDown,
+    cursorLeft,
+    cursorRight,
+    cursorUp,
+    deleteFunction,
+    enterFunction,
+    shiftFunction,
+    spaceFunction,
+    tabFunction,
+} from "./utilKeysFunctions.js";
 
 const keys = [
     {
@@ -69,12 +81,13 @@ const keys = [
     {
         display: { ru: "Backspace", en: "Backspace", additional: { ru: "", en: "" } },
         code: "Backspace",
-        function: delFunction,
+        function: backspaceFunction,
         util: true,
     },
     {
         display: { ru: "Tab", en: "Tab", additional: { ru: "", en: "" } },
         code: "Tab",
+        function: tabFunction,
         util: true,
     },
     {
@@ -145,11 +158,13 @@ const keys = [
     {
         display: { ru: "DEL", en: "DEL", additional: { ru: "", en: "" } },
         code: "Delete",
+        function: deleteFunction,
         util: true,
     },
     {
         display: { ru: "Caps Lock", en: "Caps Lock", additional: { ru: "", en: "" } },
         code: "CapsLock",
+        function: capslockFunction,
         util: true,
     },
     {
@@ -208,13 +223,15 @@ const keys = [
         util: false,
     },
     {
-        display: { ru: "ENTER", en: "ENTER", additional: { ru: "", en: "" } },
+        display: { ru: "Enter", en: "Enter", additional: { ru: "", en: "" } },
         code: "Enter",
+        function: enterFunction,
         util: true,
     },
     {
         display: { ru: "Shift", en: "Shift", additional: { ru: "", en: "" } },
         code: "ShiftLeft",
+        function: shiftFunction,
         util: true,
     },
     {
@@ -263,7 +280,7 @@ const keys = [
         util: false,
     },
     {
-        display: { ru: "/", en: "/", additional: { ru: "", en: "" } },
+        display: { ru: "/", en: "/", additional: { ru: ".", en: "" } },
         code: "Slash",
         util: false,
     },
@@ -277,6 +294,7 @@ const keys = [
     {
         display: { ru: "Shift", en: "Shift", additional: { ru: "", en: "" } },
         code: "ShiftRight",
+        function: shiftFunction,
         util: true,
     },
     {
@@ -297,6 +315,7 @@ const keys = [
     {
         display: { ru: "", en: "", additional: { ru: "", en: "" } },
         code: "Space",
+        function: spaceFunction,
         util: true,
     },
     {
