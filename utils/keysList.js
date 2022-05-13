@@ -1,4 +1,5 @@
 import {
+    altFunction,
     backspaceFunction,
     capslockFunction,
     cursorDown,
@@ -310,6 +311,7 @@ const keys = [
     {
         display: { ru: "Alt", en: "Alt", additional: { ru: "", en: "" } },
         code: "AltLeft",
+        function: altFunction,
         util: true,
     },
     {
@@ -321,6 +323,7 @@ const keys = [
     {
         display: { ru: "Alt", en: "Alt", additional: { ru: "", en: "" } },
         code: "AltRight",
+        function: altFunction,
         util: true,
     },
     {

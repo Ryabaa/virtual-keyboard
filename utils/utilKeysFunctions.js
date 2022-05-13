@@ -1,4 +1,5 @@
 import { getButton, getTextarea } from "./domElements.js";
+import { switchLanguage } from "./keyboardLanguage.js";
 
 export let cursorIndex = 0;
 export let caps = false;
@@ -115,5 +116,16 @@ export const shiftFunction = () => {
         shiftLeft.classList.add("button--pressed");
         shiftRight.classList.add("button--pressed");
         shift = true;
+    }
+};
+
+export const altFunction = () => {
+    if (shift) {
+        let shiftLeft = getButton("ShiftLeft");
+        let shiftRight = getButton("ShiftRight");
+        shiftLeft.classList.remove("button--pressed");
+        shiftRight.classList.remove("button--pressed");
+        shift = false;
+        switchLanguage();
     }
 };

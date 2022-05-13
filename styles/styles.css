@@ -80,6 +80,8 @@ body {
   padding: 0 10px;
   border-radius: 5px;
   position: relative;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
 }
 
 .button img {
@@ -88,11 +90,21 @@ body {
 
 .button--active, .button--pressed, .button:active {
   background-color: #314499;
+  color: #fafafa;
+}
+
+.button:hover {
+  background-color: #4a5fb9;
 }
 
 .button-util {
   color: #6778c2;
   border-bottom: solid 3px #314499;
+}
+
+.button-util:hover {
+  background-color: #314499;
+  color: #fafafa;
 }
 
 .button-backspace, .button-enter, .button-capslock, .button-controlleft {
@@ -105,6 +117,10 @@ body {
 
 .button-space {
   min-width: 295px;
+}
+
+.button-arrowup, .button-arrowleft, .button-arrowdown, .button-arrowright {
+  background-color: #4a5fb9;
 }
 
 .additional {

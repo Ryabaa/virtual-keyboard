@@ -1,19 +1,24 @@
 import keys from "./keysList.js";
 import { getButton, getTextarea } from "./domElements.js";
-import { languageEN, switchLanguage } from "./keyboardLanguage.js";
+import { languageEN } from "./keyboardLanguage.js";
 import { cursorFunction, cursorIndex, caps, shift } from "./utilKeysFunctions.js";
 
 export const handleButtonClick = (event, key, languageEN) => {
     let textarea = getTextarea();
     let textareaArr = textarea.textContent.split("");
     if (!key.util) {
-        cursorFunction(false);
         let display = languageEN ? key.display.en : key.display.ru;
+        if (shift) {
+            display = languageEN ? key.display.additional.en : key.display.additional.ru;
+        }
         if (!shift && !caps) {
             display = display.toLowerCase();
         }
-        textareaArr.splice(cursorIndex - 1, 0, display);
-        textarea.textContent = textareaArr.join("");
+        if (display !== "") {
+            cursorFunction(false);
+            textareaArr.splice(cursorIndex - 1, 0, display);
+            textarea.textContent = textareaArr.join("");
+        }
     }
     if (key.function) {
         key.function();
@@ -34,6 +39,9 @@ export const handleButtonPress = (event, action) => {
                 if (!key.util) {
                     cursorFunction(false);
                     let display = languageEN ? key.display.en : key.display.ru;
+                    if (shift) {
+                        display = languageEN ? key.display.additional.en : key.display.additional.ru;
+                    }
                     if (!shift && !caps) {
                         display = display.toLowerCase();
                     }
@@ -51,11 +59,5 @@ export const handleButtonPress = (event, action) => {
 
         default:
             break;
-    }
-};
-
-export const handleChangeLanguage = (event) => {
-    if (!shift) {
-        if (event.code === "AltLeft") switchLanguage();
     }
 };
